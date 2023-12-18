@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get the Answer</title>
+    <title>Get Your Answer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>您收到的答案是：</h1>
-    <p id="message">点击按钮获取答案</p>
-    <button onclick="showRandomMessage()">获取答案</button>
-
+    <div class="container">
+        <button id="answer-btn">CLICK TO GET</button>
+        <div id="answer" class="hidden"></div>
+    </div>
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
