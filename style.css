@@ -5,8 +5,7 @@ body, html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0; /* Optional: added a light background color */
+    font-family: Arial, sans-serif;
 }
 
 .container {
@@ -16,30 +15,8 @@ body, html {
 #answer-btn {
     padding: 10px 15px;
     margin: 20px 0;
-    background-color: #007bff; /* A vibrant blue for the button */
-    color: #ffffff; /* White text for better readability */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners for the button */
-    font-size: 18px; /* Larger font size for the button text */
-    cursor: pointer; /* Change cursor to pointer when hovering over the button */
 }
 
-
-#answer {
-    font-size: 36px; /* Larger font size for the answer text */
-    font-weight: bold; /* Bold font weight for the answer text */
-    color: #333333; /* Darker text color for the answer */
-    margin-top: 20px; /* Spacing above the answer text */
-    display: none; /* Keep the answer hidden initially */
-}
-
-/* Additional styles for animation and visibility */
-.visible {
-    display: block;
-    animation: fadeIn 0.5s;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.hidden {
+    display: none;
 }
