@@ -1,0 +1,27 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size:36px
+    font-family: Arial, sans-serif;
+
+}
+
+.container {
+    width: 300px;
+}
+
+#answer-btn {
+    padding: 10px 15px;
+    font-size: 18px
+    margin: 20px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+
