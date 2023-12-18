@@ -3,23 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Your Answer</title>
+    <title>答案之书</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="content">
-    <h1>答案之书在您浏览过程中 - 解答之书</h1>
-    <p>当您准备足够时，点击答案之书，它将给您答案</p>
-    <div class="book" onclick="toggleAnswer()">
-        <img src="book-cover.jpg" alt="答案之书封面" id="book-cover">
-    </div>
-    <div id="answer" class="answer hidden">
-        <p>你会因为你做了的而感到快乐</p>
-        <p>you'll be happy you did</p>
-        <button onclick="toggleAnswer()">再问一次</button>
-        <button onclick="hideAnswer()">关闭回答</button>
-    </div>
+<div class="container">
+    <button id="answer-btn" onclick="showRandomAnswer()">获取答案</button>
+    <div id="answer" class="hidden"></div>
 </div>
 
 <script src="script.js"></script>
