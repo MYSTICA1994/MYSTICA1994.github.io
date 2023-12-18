@@ -1,4 +1,4 @@
-const messages = [
+const answers = [
     {
         "number": "001",
         "message": "别失望"
