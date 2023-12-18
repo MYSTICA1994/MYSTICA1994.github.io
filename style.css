@@ -26,7 +26,7 @@ body, html {
 
 
 #answer {
-    font-size: 24px; /* Larger font size for the answer text */
+    font-size: 36px; /* Larger font size for the answer text */
     font-weight: bold; /* Bold font weight for the answer text */
     color: #333333; /* Darker text color for the answer */
     margin-top: 20px; /* Spacing above the answer text */
