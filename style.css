@@ -24,6 +24,16 @@ body, html {
     cursor: pointer; /* Change cursor to pointer when hovering over the button */
 }
 
+#reset-btn {
+    padding: 10px 15px;
+    background-color: #ccc; /* Light gray for the reset button */
+    color: #333; /* Dark text for visibility */
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    display: none; /* Initially hidden like the answer */
+}
 #answer {
     font-size: 24px; /* Larger font size for the answer text */
     font-weight: bold; /* Bold font weight for the answer text */
