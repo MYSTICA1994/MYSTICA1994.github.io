@@ -1,37 +1,42 @@
+/* 添加必要的样式以美化界面 */
 body, html {
     height: 100%;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    text-align: center; /* 使文本居中 */
+    background-color: #f0f0f0; /* 设置背景颜色 */
 }
 
-h1 {
-    color: #333;
+.content {
+    max-width: 600px; /* 设置最大宽度 */
+    margin: auto; /* 水平居中 */
+    padding: 20px; /* 添加内边距 */
+    background-color: #fff; /* 设置内容背景颜色 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
 }
 
-#message {
-    background: #e7e7e7;
-    padding: 10px;
-    margin-bottom: 15px;
+.book {
+    margin: 20px 0; /* 添加上下外边距 */
+    cursor: pointer; /* 将鼠标样式设置为指针 */
+}
+
+.book img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hidden {
+    display: none; /* 默认隐藏答案部分 */
+}
+
+.answer {
+    border: 1px solid #ccc; /* 添加边框 */
+    padding: 10px; /* 添加内边距 */
+    margin: 20px 0; /* 添加上下外边距 */
 }
 
 button {
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #555;
+    margin-top: 10px; /* 添加按钮上边距 */
+    padding: 5px 10px; /* 添加按钮内边距 */
+    cursor: pointer; /* 将鼠标样式设置为指针 */
 }
