@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -9,16 +10,15 @@
 <body>
 
 <div class="container">
-    <div class="card">
-        <h1>答案之书</h1>
-        <button id="answer-btn" onclick="showRandomAnswer()">Click to get</button>
-        <div id="answer" class="answer hidden"></div>
+    <div id="card" class="card hidden">
+        <p id="answer"></p>
     </div>
+    <button id="answer-btn">Click to get</button>
+    <button id="reset-btn" class="hidden">Reset</button>
 </div>
 
 <script src="data.js"></script>
 <script src="script.js"></script>
-    
 
 </body>
 </html>
