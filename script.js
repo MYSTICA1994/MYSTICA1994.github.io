@@ -8,6 +8,5 @@ function showRandomAnswer() {
     const answerElement = document.getElementById("answer");
     const randomIndex = Math.floor(Math.random() * answers.length);
     answerElement.textContent = answers[randomIndex];
-    answerElement.style.display = 'block'; // 显示答案
-    document.getElementById("answer-btn").style.marginBottom = '20px'; // 按钮向下移动
+    answerElement.classList.toggle('hidden'); // 切换hidden类以显示或隐藏答案
 }
