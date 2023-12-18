@@ -1,38 +1,33 @@
 body, html {
     height: 100%;
     margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background-color: #f0f0f0; /* 您可以根据需要修改背景颜色 */
+    background-color: #f0f0f0;
     font-family: 'Arial', sans-serif;
 }
 
-/* 如果您希望.content占据整个页面，但内容居中，您可以添加以下样式 */
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* 垂直居中内容 */
-    align-items: center; /* 水平居中内容 */
-    height: 100%;
-    width: 100%; /* 您可以设置一个最大宽度 */
-}
-
-.book i.fas.fa-book-open {
-    font-size: 100px; /* 图标大小 */
-    color: #555; /* 图标颜色 */
-    cursor: pointer; /* 鼠标悬停时的手型指针 */
-}
-
-.hidden {
-    display: none;
-}
-
-.answer {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    width: 80%; /* 根据需要调整宽度 */
+.container {
+    width: 100%;
     max-width: 600px; /* 根据需要调整最大宽度 */
+}
+
+#answer-btn {
+    padding: 10px 20px;
+    margin-bottom: 20px; /* 按钮和答案之间的距离 */
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#answer {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
 }
