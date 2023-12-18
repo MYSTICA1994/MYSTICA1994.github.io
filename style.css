@@ -1,33 +1,22 @@
 body, html {
-    background-color: #f7f7f7; /* A light grey background */
-    color: #333; /* Dark grey text for readability */
-    font-family: 'Open Sans', sans-serif; /* Modern, readable font */
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
 }
 
 .container {
-    padding: 20px;
-    background-color: #fff; /* White card background */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
-    border-radius: 8px; /* Slightly rounded corners for a softer look */
+    width: 300px;
 }
 
 #answer-btn {
-    background-color: #007bff; /* A vibrant blue for the primary action */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px; /* Consistent rounded corners */
-    font-size: 18px; /* Larger font for importance */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Button shadow for depth */
+    padding: 10px 15px;
+    margin: 20px 0;
 }
 
-#answer-btn:hover {
-    background-color: #0056b3; /* A darker blue on hover for interaction feedback */
-}
-
-#answer {
-    margin-top: 20px;
-    padding: 10px;
-    border-left: 3px solid #007bff; /* A blue accent on the left for visual interest */
-    display: none; /* Start hidden */
+.hidden {
+    display: none;
 }
