@@ -5,23 +5,26 @@ body, html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size:36px
+    font-size: 36px;
     font-family: Arial, sans-serif;
-
 }
 
 .container {
     width: 300px;
 }
 
-#answer-btn {
-    padding: 10px 15px;
-    font-size: 18px
-    margin: 20px 0;
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: none;
+}
+
+.card-content {
+    font-size: 24px;
 }
 
 .hidden {
     display: none;
 }
-
-
