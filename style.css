@@ -3,31 +3,63 @@ body, html {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: #f7f7f7;
     font-family: 'Arial', sans-serif;
 }
 
 .container {
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s;
     width: 100%;
-    max-width: 600px; /* 根据需要调整最大宽度 */
+    max-width: 320px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
 }
 
 #answer-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
     padding: 10px 20px;
-    margin-bottom: 20px; /* 按钮和答案之间的距离 */
+    margin-bottom: 20px;
+    border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
+    outline: none;
+    display: block;
+    width: 100%;
+}
+
+#answer-btn:hover {
+    background-color: #0056b3;
 }
 
 #answer {
-    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
     margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    width: 100%;
-    box-sizing: border-box;
+}
+
+/* 修改hidden类，以便使用opacity和visibility属性实现过渡效果 */
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.answer {
+    visibility: visible;
+    opacity: 1;
 }
