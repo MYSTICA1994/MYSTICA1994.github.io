@@ -1,42 +1,38 @@
-/* 添加必要的样式以美化界面 */
 body, html {
     height: 100%;
     margin: 0;
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    text-align: center;
+    background-color: #f0f0f0; /* 您可以根据需要修改背景颜色 */
     font-family: 'Arial', sans-serif;
-    text-align: center; /* 使文本居中 */
-    background-color: #f0f0f0; /* 设置背景颜色 */
 }
 
+/* 如果您希望.content占据整个页面，但内容居中，您可以添加以下样式 */
 .content {
-    max-width: 600px; /* 设置最大宽度 */
-    margin: auto; /* 水平居中 */
-    padding: 20px; /* 添加内边距 */
-    background-color: #fff; /* 设置内容背景颜色 */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 垂直居中内容 */
+    align-items: center; /* 水平居中内容 */
+    height: 100%;
+    width: 100%; /* 您可以设置一个最大宽度 */
 }
 
-.book {
-    margin: 20px 0; /* 添加上下外边距 */
-    cursor: pointer; /* 将鼠标样式设置为指针 */
-}
-
-.book img {
-    max-width: 100%;
-    height: auto;
+.book i.fas.fa-book-open {
+    font-size: 100px; /* 图标大小 */
+    color: #555; /* 图标颜色 */
+    cursor: pointer; /* 鼠标悬停时的手型指针 */
 }
 
 .hidden {
-    display: none; /* 默认隐藏答案部分 */
+    display: none;
 }
 
 .answer {
-    border: 1px solid #ccc; /* 添加边框 */
-    padding: 10px; /* 添加内边距 */
-    margin: 20px 0; /* 添加上下外边距 */
-}
-
-button {
-    margin-top: 10px; /* 添加按钮上边距 */
-    padding: 5px 10px; /* 添加按钮内边距 */
-    cursor: pointer; /* 将鼠标样式设置为指针 */
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 80%; /* 根据需要调整宽度 */
+    max-width: 600px; /* 根据需要调整最大宽度 */
 }
