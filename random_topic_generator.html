@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机话题生成器</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        #generate {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #generate:hover {
+            background-color: #45a049;
+        }
+        .topic-line {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
+    <script type="text/javascript">
+        // Function to load the JSON data
+        async function loadData() {
+            let response = await fetch('random_topic_generator/data.js');
+            let data = await response.json();
+            return data;
+        }
+
+        // Function to get a random topic
+        function getRandomTopic(data) {
+            let randomIndex = Math.floor(Math.random() * data.length);
+            let topic = data[randomIndex];
+            document.getElementById("topic-category").innerHTML = "你抽到" + topic.类型 + "话题：";
+            document.getElementById("topic-content").innerHTML = topic.话题;
+        }
+
+        // Load data and setup the button click event
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let data;
+            loadData().then(responseData => {
+                data = responseData;
+                document.getElementById("generate").addEventListener('click', function() {
+                    getRandomTopic(data);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>随机话题生成器</h1>
+    <button id="generate">生成话题</button>
+    <div class="topic-line" id="topic-category"></div>
+    <div class="topic-line" id="topic-content"></div>
+</body>
+</html>
