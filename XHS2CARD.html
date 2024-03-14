@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>引用卡片展示</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <style>
+        /*@font-face {*/
+        /*    font-family: 'liguofu';*/
+        /*    src: url('liguofu.ttf') format('truetype');*/
+        /*}*/
+        body {
+            font-family: '宋体';
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .card {
+            background: #079452;
+            border-radius: 10px;
+            /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.2s;
+        }
+        .card2 {
+            background: #079452;
+            border-radius: 10px;
+            /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+            margin: 10px;
+            padding: 20px;
+            width: 340px;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .quote {
+            font-size: 30px;
+            color: white;
+            text-align: center;
+        }
+        .author {
+            text-align: right;
+            font-style: italic;
+            margin-top: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<input type="file" id="upload" accept=".xlsx, .xls">
+<button id="generateButton" onclick="generatePicture()" disabled>生成canvas图片</button>
+<button id="generateButton2" onclick="downloads()" >一键下载</button>
+<div class="card-container" id="cardContainer2"></div>
+<div class="card-container" id="cardContainer"></div>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.5.0/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+
+<script>
+    var cards=[];
+    document.getElementById('upload').addEventListener('change', function(e) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var data = new Uint8Array(e.target.result);
+            var workbook = XLSX.read(data, {type: 'array'});
+            var firstSheetName = workbook.SheetNames[0];
+            var worksheet = workbook.Sheets[firstSheetName];
+            var quotes = XLSX.utils.sheet_to_json(worksheet, {header: 1});
+            var container = document.getElementById('cardContainer');
+            container.innerHTML = '';
+
+            quotes.forEach(function(row) {
+                var card = document.createElement('div');
+                card.className = 'card';
+                var quoteText = row[0]; // 假设引用文本在第二列
+                if(quoteText) { // 确保非空
+                    var quote = document.createElement('p');
+                    quote.className = 'quote';
+                    quote.textContent = quoteText;
+                    card.appendChild(quote);
+                    var zuozhe = document.createElement('div');
+                    zuozhe.className = 'author';
+                    zuozhe.textContent = 'Mysticaaaaa'; // Use the column name from your Excel
+                    card.appendChild(zuozhe);
+                    cards.push(card)
+                    container.appendChild(card)
+                }
+            });
+
+
+            document.getElementById('generateButton').disabled = false;
+        };
+        reader.readAsArrayBuffer(e.target.files[0]);
+    });
+
+
+    function generatePicture() {
+        for (let i = 0; i < cards.length; i++) {
+            html2canvas(cards[i],{
+                allowTaint: true,
+                useCORS: true ,/*使用跨域*/
+                scale:4
+            }).then(canvas => {
+                var card = document.createElement('div');
+                card.className = 'card2';
+                card.append(canvas)
+                document.body.querySelector('#cardContainer2').appendChild(card)
+            });
+        }
+        var container = document.getElementById('cardContainer');
+        container.innerHTML = '';
+    }
+
+    function downloads() {
+        var zip = new JSZip();
+        var canvases = document.querySelectorAll('canvas');
+        canvases.forEach((canvas, index) => {
+            canvas.toBlob(blob => {
+                zip.file(`canvas${index + 1}.png`, blob);
+                if (index === canvases.length - 1) { // 最后一个 canvas
+                    zip.generateAsync({type:"blob"}).then(function(content) {
+                        saveAs(content, "canvases.zip");
+                    });
+                }
+            });
+        });
+    }
+</script>
+
+</body>
+</html>
